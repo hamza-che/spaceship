@@ -1,10 +1,13 @@
 import React from "react";
+import Dashboard from "./components/Dashboard";
+import Planet from "./components/Planet";
 
 function App() {
   return (
     <main>
       <div className="container">
-        <h1>Hello KF96</h1>
+        <Planet />
+        <Dashboard />
       </div>
     </main>
   );
