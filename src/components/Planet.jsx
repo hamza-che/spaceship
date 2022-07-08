@@ -1,13 +1,14 @@
 import React from "react";
+import { planetContextConsumer } from "../contexts/PlanetContext";
 
 function Planet() {
-  const matrix = Array(63).fill("");
-  const columns = 7;
-  matrix[Math.floor(matrix.length - matrix.length / columns - 8 * 2)] = "X";
+  const { planet } = planetContextConsumer();
   return (
     <section>
       <div className="planet">
-        {matrix.map((item, i) => <div key={i}>{item}</div>)}
+        {planet.map((row, i) => (
+          <div key={i}>{row.map((col, j) => <span key={j}>{col}</span>)}</div>
+        ))}
       </div>
       <div className="starting-point">
         <div>(0, 0, N)</div>

@@ -12,9 +12,6 @@ body {
   color: var(--main-color);
   font-weight: bold;
 }
-img {
-  max-width: 100%;
-}
 button {
   outline: none;
   border: none;
@@ -33,7 +30,12 @@ button {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  gap: .5rem;
+  gap: 3rem;
+}
+@media (min-width: 550px) {
+  .container {
+    flex-direction: row;
+  }
 }
 @media (min-width: 768px) {
   .container {
@@ -43,7 +45,6 @@ button {
 @media (min-width: 992px) {
   .container {
     width: 970px;
-    flex-direction: row;
   }
 }
 @media (min-width: 1200px) {
@@ -54,17 +55,27 @@ button {
 /* End global styles */
 /* Start planet styles */
 .planet {
+  transform: rotateX(180deg);
+}
+.planet div {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   gap: 0;
 }
-.planet div {
+.planet span {
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid var(--ah-grey-500);
+  transform: rotateX(180deg);
+}
+@media (max-width: 549px) {
+  .planet span {
+    width: 35px;
+    height: 35px;
+  }
 }
 .starting-point div {
   margin-top: .5rem;
@@ -72,6 +83,8 @@ button {
 .starting-point div:nth-child(2) {
   color: var(--ah-grey-300);
 }
+/* End planet styles */
+/* Start dashboard styles */
 .dashboard {
   display: flex;
   flex-direction: column;
@@ -83,7 +96,7 @@ button {
   margin-bottom: 1rem;
 }
 .dashboard .current-position div {
-  padding: .5rem 1rem;
+  padding: .3rem 0;
   background-color: var(--ah-grey-600);
 }
 .dashboard .controls h4 {
@@ -92,4 +105,4 @@ button {
 .dashboard .control-btns > * {
   margin: .5rem;
 }
-/* End planet styles */
+/* End dashboard styles */
