@@ -72,9 +72,14 @@ button {
   transform: rotateX(180deg);
 }
 @media (max-width: 549px) {
-  .planet span {
-    width: 35px;
-    height: 35px;
+  .planet {
+    width: 55%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 400px) {
+  .planet {
+    width: 75%;
   }
 }
 .starting-point div {

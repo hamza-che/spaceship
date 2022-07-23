@@ -59,6 +59,6 @@ export function vehicleReducer(state, action) {
                 : state.direction === "E" ? "N" : state.direction,
       };
     default:
-      state;
+      return state;
   }
 }
